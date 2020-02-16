@@ -1,6 +1,6 @@
 # PasteMyst.py
 
-(https://paste.myst.rs)[paste.myst.rs] API wrapper written in Python.
+[paste.myst.rs](https://paste.myst.rs) API wrapper written in Python.
 
 <br>
 
@@ -69,4 +69,4 @@ This repo is licensed under the MIT license
 
 ## Maintainers
 
-- (https://github.com/Dmunch04)[Munchii]
+- [Munchii](https://github.com/Dmunch04)

@@ -6,7 +6,7 @@ with open ('README.md', 'r') as README:
 
 setup (
 	name = 'pastemyst',
-	version = '1.0',
+	version = '1.1',
 	packages = ['pastemyst'],
 	author = 'Munchii',
 	author_email = 'contact@munchii.me',
