@@ -2,7 +2,7 @@ import json
 import requests
 import urllib.parse
 
-from PasteMystInfo import PasteMystInfo
+from .PasteMystInfo import PasteMystInfo
 
 BaseURL = 'https://paste.myst.rs/'
 APIURL = BaseURL + 'api'
@@ -41,5 +41,6 @@ def MakeObject (Response: dict):
         Response['createdAt'],
         Response['code'],
         Response['expiresIn'],
-        Response['language']
+        Response['language'],
+        BaseURL
     )
