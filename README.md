@@ -28,20 +28,22 @@ Here's the libraries used to create the wrapper:
 <br>
 
 ## Functions
-### `create_paste_myst(code: str, expires_in: str = 'never', language: str = None)`
+#### `create_paste_myst(code: str, expires_in: str = 'never', language: str = None)`
 
 > Alias: `CreatePasteMyst(..)`
+
 This function creates a new PasteMyst and returns a `PasteMystInfo` object
 
-### `get_paste_myst(id: str)`
+#### `get_paste_myst(id: str)`
 
 > Alias: `GetPasteMyst(..)`
+
 This function gets an exisiting PasteMyst by an id. It returns the Responding `PasteMystInfo` object
 
 <br>
 
 ## Objects
-### `PasteMystInfo`
+#### `PasteMystInfo`
 
 Here's a table of the classes contents
 | Variable   | Type     | Alias     | Description                                                        |
