@@ -53,11 +53,14 @@ class Client:
             return False
 
     def get_expire_stamp(self, paste):
-        if not paste.expires_in or not paste.created_at:
-            return
+        if not paste.expires_in:
+            raise RequestError('paste must have expires_in field')
+
+        if not paste.created_at:
+            raise RequestError('paste must have created_at field')
 
         if paste.expires_in == ExpiresIn.NEVER:
-            return
+            raise RequestError('cant find expiration stamp of paste that never expires')
 
         unix_stamp = (datetime.fromtimestamp(paste.created_at.timestamp()) - datetime(1970, 1, 1)).total_seconds()
         raw = trio.run(self.api.get_expire_unix, int(unix_stamp), paste.expires_in)
