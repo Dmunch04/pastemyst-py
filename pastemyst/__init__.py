@@ -1,1 +1,9 @@
-from .PasteMyst import CreatePasteMyst, create_paste_myst, GetPasteMyst, get_paste_myst
+from pastemyst.client import Client
+from pastemyst.models import *
+from pastemyst.api import *
+from pastemyst.utils import *
+
+
+def init(lib):
+    import multio
+    multio.init(lib)

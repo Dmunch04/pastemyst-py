@@ -1,74 +1,49 @@
-# PasteMyst.py
+# pastemyst-py
 
-[paste.myst.rs](https://paste.myst.rs) API wrapper written in Python.
+api wrapper for [pastemyst-v2](https://paste.myst.rs) written in python.
 
 <br>
 
-## Install
+## install
 
-Install using pip:
+install using pip:
 ```
   pip install pastemyst
 ```
-Or if using Linux:
-```
-  pip3 install pastemyst
-```
 
 <br>
 
-## Requirements
+## requirements
 
 Here's the libraries used to create the wrapper:
+- time
 - json
-- requests
-- urllib
+- asks
+- trio
+- multio
 - datetime
+- collections
 
 <br>
 
-## Functions
-#### `create_paste_myst(code: str, expires_in: str = 'never', language: str = None)`
+## usage
 
-> Alias: `CreatePasteMyst(..)`
-
-This function creates a new PasteMyst and returns a `PasteMystInfo` object
-
-#### `get_paste_myst(id: str)`
-
-> Alias: `GetPasteMyst(..)`
-
-This function gets an exisiting PasteMyst by an id. It returns the Responding `PasteMystInfo` object
+you can find a simple usage example in `/test/basic.py`.
 
 <br>
 
-## Objects
-#### `PasteMystInfo`
+## contribution
 
-Here's a table of the classes contents
-| Variable   | Type     | Alias     | Description                                                        |
-|------------|----------|-----------|--------------------------------------------------------------------|
-| id         | str      | ID        | This is the PasteMyst's ID. Use this to access the PasteMyst again |
-| created_at | datetime | CreatedAt | This holds the exact date and time the PasteMyst was created at    |
-| code       | str      | Code      | This is the code, the PasteMyst contains                           |
-| expires_in | str      | ExpiresIn | This is when the PasteMyst will expire and be deleted              |
-| language   | str      | Language  | The target programming language of the PasteMyst                   |
-| url        | str      | URL       | The exact URL to get to the PasteMyst                              |
+feel free to make a pull request or open an issue. all help is welcome.
 
 <br>
 
-## Contribution
+## license
 
-Feel free to make a pull request! All help is appreciated!
-
-<br>
-
-## License
-
-This repo is licensed under the MIT license
+this repo is licensed under mit license.
 
 <br>
 
-## Maintainers
+## maintainers
 
-- [Munchii](https://github.com/Dmunch04)
+- [Munchii](https://github.com/Dmunch04) (me)
