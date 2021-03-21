@@ -4,7 +4,7 @@ from pastemyst.utils import spacify_string
 class LanguageInfo(object):
     __slots__ = (
         'ext', 'name', 'color',
-        'mode', 'mimes'
+        'mode', 'mimes', 'file'
     )
 
     def from_dict(self, data):
