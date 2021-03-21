@@ -37,7 +37,7 @@ class Sendable(object):
 
 class Paste(Sendable):
     __slots__ = (
-        '_id', 'owner_id', 'title',
+        '_id', 'id', 'owner_id', 'title',
         'created_at', 'expires_in', 'deletes_at',
         'stars', 'is_private', 'is_public',
         'tags', 'pasties', 'edits'
@@ -60,6 +60,10 @@ class Paste(Sendable):
         if key in ('created_at', 'deletes_at'):
             value = datetime.utcfromtimestamp(int(value))
 
+        # we also want to now have a `id` field
+        if key == '_id':
+            super().__setattr__('id', value)
+
         super().__setattr__(key, value)
 
     def to_dict(self):
@@ -80,13 +84,23 @@ class Paste(Sendable):
 
 class Pasty(Sendable):
     __slots__ = (
-        '_id', 'language', 'title', 'code'
+        '_id', 'id', 'language', 'title', 'code'
     )
 
     def __init__(self, title='untitled', code='', language=Language.AUTODETECT):
         self.title = title
         self.code = code
         self.language = language
+
+    def __setattr__(self, key, value):
+        if key in ('created_at', 'deletes_at'):
+            value = datetime.utcfromtimestamp(int(value))
+
+        # we also want to now have a `id` field
+        if key == '_id':
+            super().__setattr__('id', value)
+
+        super().__setattr__(key, value)
 
     def to_dict(self):
         data = {
@@ -103,13 +117,16 @@ class Pasty(Sendable):
 
 class PasteEdit(Sendable):
     __slots__ = (
-        '_id', 'edit_id', 'edit_type',
+        '_id', 'id', 'edit_id', 'edit_type',
         'metadata', 'edit', 'editedAt'
     )
 
     def __setattr__(self, key, value):
         if key == 'edited_at':
             value = datetime.utcfromtimestamp(int(value))
+
+        if key == '_id':
+            super().__setattr__('id', value)
 
         super().__setattr__(key, value)
 
