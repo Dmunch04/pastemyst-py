@@ -1,22 +1,21 @@
-from pastemyst import init, Client, Language, Paste, Pasty, ExpiresIn, EditType
-
-# TODO: Fix this lol
+from pastemyst import Client, Language, Paste, Pasty, ExpiresIn, EditType
 
 if __name__ == '__main__':
-    init('trio')
-    client = Client(key='', is_dev=True)
+    client = Client(key='')
 
-    res1 = client.get_paste('50ry40it')
+    res1 = client.get_paste('21y82rbw')
     assert len(res1.pasties) == 1
-    assert res1.pasties[0].title == 'basic.py'
-    assert res1.pasties[0].language == Language.PYTHON
+    assert res1.pasties[0].title == 'shellsort.adb'
+    assert res1.pasties[0].language == Language.JAVASCRIPT
 
-    res2 = client.get_paste('8czo099x')
-    assert len(res2.pasties) == 2
-    assert res2.pasties[0].title == 'file1.py'
-    assert res2.pasties[1].title == 'file2.py'
-    assert res2.pasties[0].language == Language.PYTHON
-    assert res2.pasties[1].language == Language.PYTHON
+    res2 = client.get_paste('flzf1gcd')
+    assert len(res2.pasties) == 3
+    assert res2.pasties[0].title == 'pmdeps'
+    assert res2.pasties[1].title == 'app.d'
+    assert res2.pasties[2].title == 'hello.d'
+    assert res2.pasties[0].language == Language.CPP
+    assert res2.pasties[1].language == Language.D
+    assert res2.pasties[1].language == Language.D
 
     res3 = client.get_language_info('d')
     assert res3.name == 'D'
@@ -27,21 +26,14 @@ if __name__ == '__main__':
     assert len(res4.pasties) == 1
     assert res4.expires_in == ExpiresIn.ONE_HOUR
 
-    res4.title = 'yeet'
-    res5 = client.edit_paste(res4)
-    assert len(res5.edits) == 1
-    assert res5.edits[0].edit_type == EditType.TITLE
+    res5 = client.get_expire_stamp(res4)
+    assert res5
+    assert res5 == res4.deletes_at
 
-    res6 = client.delete_paste(res4._id)
+    res6 = client.user_exists('munchii')
     assert res6
 
-    res7 = client.get_expire_stamp(res4)
-    assert res7
-    assert res7 == res4.deletes_at
-
-    res8 = client.user_exists('munchii')
-    assert res8
-
-    res9 = client.get_user('munchii')
-    assert res9.public_profile
-    assert res9.default_lang == 'Autodetect'
+    res7 = client.get_user('munchii')
+    assert res7.public_profile
+    assert res7.default_lang == 'Autodetect'
+    assert res7.contributor
