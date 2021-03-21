@@ -5,7 +5,7 @@ with open('README.md', 'r') as readme:
 
 setup(
 	name='pastemyst',
-	version='2.2.5',
+	version='2.2.6',
 	packages=find_packages(),
 	author='Munchii',
 	author_email='daniellmunch@gmail.com',
@@ -22,7 +22,7 @@ setup(
             	'Programming Language :: Python :: 3',
             	'Operating System :: OS Independent',
 	],
-	keywords='simple api wrapper python3 python pastemyst pastemyst.rs',
+	keywords='simple api wrapper python3 python pastemyst pastemyst.py',
 	install_requires=[
 		'asks',
 		'trio',
