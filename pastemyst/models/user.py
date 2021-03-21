@@ -5,7 +5,7 @@ class User:
     __slots__ = (
         '_id', 'username', 'avatar_url',
         'default_lang', 'public_profile',
-        'supporter_length'
+        'supporter_length', 'contributor'
     )
 
     def from_dict(self, data):
