@@ -4,11 +4,15 @@ from pastemyst.utils import spacify_string
 class LanguageInfo(object):
     __slots__ = (
         'ext', 'name', 'color',
-        'mode', 'mimes', 'file'
+        'mode', 'mimes'
     )
 
     def from_dict(self, data):
         for attr in data:
+            # we dont want to use the file field as its useless to the users
+            if attr == 'file':
+                continue
+
             setattr(self, spacify_string(attr), data[attr])
 
 
