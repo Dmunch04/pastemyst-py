@@ -1,5 +1,7 @@
 from pastemyst import init, Client, Language, Paste, Pasty, ExpiresIn, EditType
 
+# TODO: Fix this lol
+
 if __name__ == '__main__':
     init('trio')
     client = Client(key='', is_dev=True)

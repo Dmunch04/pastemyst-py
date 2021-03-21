@@ -5,7 +5,7 @@ with open('README.md', 'r') as readme:
 
 setup(
 	name='pastemyst',
-	version='2.2.4',
+	version='2.2.5',
 	packages=find_packages(),
 	author='Munchii',
 	author_email='daniellmunch@gmail.com',
