@@ -43,7 +43,12 @@ class Paste(Sendable):
         'tags', 'pasties', 'edits'
     )
 
-    def __init__(self, title='untitled', pasties=[], expires_in=ExpiresIn.NEVER, is_private=False, is_public=True, tags=[]):
+    def __init__(self, title='untitled', pasties=None, expires_in=ExpiresIn.NEVER, is_private=False, is_public=True,
+                 tags=None):
+        if tags is None:
+            tags = []
+        if pasties is None:
+            pasties = []
         self.title = title
         self.pasties = pasties
         self.expires_in = expires_in
