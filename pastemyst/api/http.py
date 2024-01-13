@@ -68,7 +68,6 @@ class HttpClient:
                 data = data.encode("utf-8")
 
         json_data: Dict[str, Any] | str = kwargs.get("json", {})
-        print(json_data)
 
         if self.global_event.is_set():
             await self.global_event.wait()
@@ -90,8 +89,9 @@ class HttpClient:
                         #nursery.start_soon(run_later, delay, lock.release())
                         pass
                     elif response.status_code == 429:
-                        with GlobalLock(self.global_event, data.get("global", False)):
-                            retry_after: int = int(res_data.get("retry-after", 0))
+                        if data is not None:
+                            with GlobalLock(self.global_event, data.get("global", False)):
+                                retry_after: int = int(res_data.get("retry-after", 0))
 
                     if bool(kwargs.get("return_code", False)):
                         return response.status_code

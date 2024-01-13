@@ -9,7 +9,6 @@ readme = "README.md"
 python = "^3.12"
 httpx = "^0.26.0"
 trio = "^0.24.0"
-sushitools = "^0.1.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.4.4"
