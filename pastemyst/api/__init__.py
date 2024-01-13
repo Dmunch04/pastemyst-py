@@ -1,1 +1,1 @@
-from pastemyst.api.http import HttpClient
+from .locks import HoldableLock, GlobalLock

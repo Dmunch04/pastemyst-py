@@ -18,9 +18,8 @@ install using pip:
 Here's the libraries used to create the wrapper:
 - time
 - json
-- asks
 - trio
-- multio
+- httpx
 - datetime
 - collections
 

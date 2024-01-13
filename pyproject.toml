@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pastemyst"
+version = "3.0.0"
+description = "api wrapper for paste.myst.rs"
+authors = ["munchii <daniellmunch@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+httpx = "^0.26.0"
+trio = "^0.24.0"
+sushitools = "^0.1.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
